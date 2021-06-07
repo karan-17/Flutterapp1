@@ -1,11 +1,10 @@
-import 'package:codeytapp/home_page.dart';
+import 'package:codeytapp/pages/home_page.dart';
+import 'package:codeytapp/pages/login_page.dart';
 import 'package:flutter/material.dart';
 void main(){
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
 
@@ -17,7 +16,21 @@ class MyApp extends StatelessWidget {
     //const mein change nahin kar skte kuch
 */
     return MaterialApp(
-        home: HomePage(),
+        //home: HomePage(),
+        themeMode: ThemeMode.light,
+        theme: ThemeData(
+          primarySwatch: Colors.deepPurple),
+        darkTheme: ThemeData(
+         brightness: Brightness.dark,
+          //primarySwatch: Colors.blueGrey,
+        ),
+      initialRoute: "/home",
+      routes: {
+          "/" : (context)=>LoginPage(),
+        "/home":(context)=>HomePage(),
+        // "/" is the default route(home)
+        "/login": (context)=>LoginPage()
+      },
     );
   }
 }
