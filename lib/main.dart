@@ -1,3 +1,4 @@
+import 'package:codeytapp/home_page.dart';
 import 'package:flutter/material.dart';
 void main(){
   runApp(MyApp());
@@ -7,16 +8,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: MaterialApp(
-        home: Material(
-        child: Center(
-          child: Container(
-          child: Text("Welcome Page huloooo"),
-          ),
-        ),
-      ),
-    )
+
+    /*bool isMale=true;
+    num  temp=30.5;
+    var day="Tuesday"; //var day=5;
+    const pi=3.14;
+    // final (list mein addition kar skte hain)
+    //const mein change nahin kar skte kuch
+*/
+    return MaterialApp(
+        home: HomePage(),
     );
   }
 }
