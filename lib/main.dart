@@ -1,5 +1,6 @@
 import 'package:codeytapp/pages/home_page.dart';
 import 'package:codeytapp/pages/login_page.dart';
+import 'package:codeytapp/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 void main(){
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     //const mein change nahin kar skte kuch
 */
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         //home: HomePage(),
         themeMode: ThemeMode.light,
         theme: ThemeData(
@@ -31,9 +33,9 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
           "/" : (context)=>LoginPage(),
-        "/home":(context)=>HomePage(),
+        MyRoutes.homeRoute :(context)=>HomePage(),
         // "/" is the default route(home)
-        "/login": (context)=>LoginPage()
+        MyRoutes.loginRoute: (context)=>LoginPage()
       },
     );
   }
