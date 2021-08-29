@@ -1,0 +1,42 @@
+import 'package:codeytapp/pages/home_page.dart';
+import 'package:codeytapp/pages/login_page.dart';
+import 'package:codeytapp/utils/routes.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+void main(){
+  runApp(MyApp());
+}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    /*bool isMale=true;
+    num  temp=30.5;
+    var day="Tuesday"; //var day=5;
+    const pi=3.14;
+    // final (list mein addition kar skte hain)
+    //const mein change nahin kar skte kuch
+*/
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+        //home: HomePage(),
+        themeMode: ThemeMode.light,
+        theme: ThemeData(
+          primarySwatch: Colors.deepPurple,
+          fontFamily: GoogleFonts.lato().fontFamily,
+         // primaryTextTheme : GoogleFonts.latoTextTheme()
+          ),
+        darkTheme: ThemeData(
+         brightness: Brightness.dark,
+          //primarySwatch: Colors.blueGrey,
+        ),
+      initialRoute: "/",
+      routes: {
+          "/" : (context)=>LoginPage(),
+        MyRoutes.homeRoute :(context)=>HomePage(),
+        // "/" is the default route(home)
+        MyRoutes.loginRoute: (context)=>LoginPage()
+      },
+    );
+  }
+}
